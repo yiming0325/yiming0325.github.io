@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yiming0325.com/"/>
-  <updated>2019-07-21T14:29:37.946Z</updated>
+  <updated>2019-09-23T14:26:27.481Z</updated>
   <id>https://yiming0325.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test3</title>
+    <link href="https://yiming0325.com/test3/"/>
+    <id>https://yiming0325.com/test3/</id>
+    <published>2019-09-23T14:21:46.000Z</published>
+    <updated>2019-09-23T14:26:27.481Z</updated>
+    
+    <content type="html"><![CDATA[<p>dasdasads</p><p>d</p><p>sa</p><p>ds</p><p>ad</p><p>sa</p><p>ds</p><p>ad</p><p>sa</p><p>ds</p><p>a</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;dasdasads&lt;/p&gt;
+&lt;p&gt;d&lt;/p&gt;
+&lt;p&gt;sa&lt;/p&gt;
+&lt;p&gt;ds&lt;/p&gt;
+&lt;p&gt;ad&lt;/p&gt;
+&lt;p&gt;sa&lt;/p&gt;
+&lt;p&gt;ds&lt;/p&gt;
+&lt;p&gt;ad&lt;/p&gt;
+&lt;p&gt;sa&lt;/p&gt;
+&lt;p&gt;ds&lt;/p&gt;
+&lt;p&gt;a&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="dsadsa" scheme="https://yiming0325.com/categories/dsadsa/"/>
+    
+    
+      <category term="dsadsa" scheme="https://yiming0325.com/tags/dsadsa/"/>
+    
+  </entry>
   
   <entry>
     <title>test2</title>
