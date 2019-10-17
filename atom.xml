@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yiming0325.com/"/>
-  <updated>2019-10-17T15:37:17.849Z</updated>
+  <updated>2019-10-17T16:34:20.314Z</updated>
   <id>https://yiming0325.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RHCE Milestone</title>
+    <link href="https://yiming0325.com/RHCE-Milestone/"/>
+    <id>https://yiming0325.com/RHCE-Milestone/</id>
+    <published>2019-10-17T16:27:38.000Z</published>
+    <updated>2019-10-17T16:34:20.314Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://user-images.githubusercontent.com/22051278/67028794-8ef1fa00-f13e-11e9-8b86-119c8ebfd009.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/22051278/67028794-8ef1fa00-f13e-11e9-8b86-119c8ebfd009.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yiming0325.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://yiming0325.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>虚拟机上网</title>
