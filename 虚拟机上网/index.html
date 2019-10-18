@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="0x00 实验背景linux虚拟机通过物理机访问外部网络 0x01 实验环境物理机系统版本: RHEL7.3 IP:172.25.254.1 网络配置方式：桥接 虚拟机系统版本：RHEL7.0 IP:172.25.254.2 0x02 实验步骤虚拟机开启防火防并且利用防火墙打开地址伪装 ~]# firewall-cmd --add-masquerade```123456789打开内核路由功能```">
+<meta name="description" content="0x00 实验背景linux虚拟机通过物理机访问外部网络 0x01 实验环境物理机系统版本: RHEL7.3 IP:172.25.254.1 网络配置方式：桥接 虚拟机系统版本：RHEL7.0 IP:172.25.254.2 0x02 实验步骤虚拟机开启防火防并且利用防火墙打开地址伪装 1[root@localhost ~]# firewall-cmd --add-masquerade 打开内核路">
 <meta name="keywords" content="Linux,虚拟机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟机上网">
 <meta property="og:url" content="https://yiming0325.com/虚拟机上网/index.html">
 <meta property="og:site_name" content="Yiming&#39;s blog">
-<meta property="og:description" content="0x00 实验背景linux虚拟机通过物理机访问外部网络 0x01 实验环境物理机系统版本: RHEL7.3 IP:172.25.254.1 网络配置方式：桥接 虚拟机系统版本：RHEL7.0 IP:172.25.254.2 0x02 实验步骤虚拟机开启防火防并且利用防火墙打开地址伪装 ~]# firewall-cmd --add-masquerade```123456789打开内核路由功能```">
+<meta property="og:description" content="0x00 实验背景linux虚拟机通过物理机访问外部网络 0x01 实验环境物理机系统版本: RHEL7.3 IP:172.25.254.1 网络配置方式：桥接 虚拟机系统版本：RHEL7.0 IP:172.25.254.2 0x02 实验步骤虚拟机开启防火防并且利用防火墙打开地址伪装 1[root@localhost ~]# firewall-cmd --add-masquerade 打开内核路">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-18T12:17:04.379Z">
+<meta property="og:updated_time" content="2019-10-18T12:22:24.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟机上网">
-<meta name="twitter:description" content="0x00 实验背景linux虚拟机通过物理机访问外部网络 0x01 实验环境物理机系统版本: RHEL7.3 IP:172.25.254.1 网络配置方式：桥接 虚拟机系统版本：RHEL7.0 IP:172.25.254.2 0x02 实验步骤虚拟机开启防火防并且利用防火墙打开地址伪装 ~]# firewall-cmd --add-masquerade```123456789打开内核路由功能```">
+<meta name="twitter:description" content="0x00 实验背景linux虚拟机通过物理机访问外部网络 0x01 实验环境物理机系统版本: RHEL7.3 IP:172.25.254.1 网络配置方式：桥接 虚拟机系统版本：RHEL7.0 IP:172.25.254.2 0x02 实验步骤虚拟机开启防火防并且利用防火墙打开地址伪装 1[root@localhost ~]# firewall-cmd --add-masquerade 打开内核路">
 
 
 
@@ -310,7 +310,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-18T20:17:04+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-10-18T20:22:24+08:00">
                 2019-10-18
               </time>
             
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  196
+                  198
                 </span>
               
 
@@ -404,7 +404,9 @@
 <h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>系统版本：RHEL7.0</p>
 <p>IP:172.25.254.2</p>
 <h1 id="0x02-实验步骤"><a href="#0x02-实验步骤" class="headerlink" title="0x02 实验步骤"></a>0x02 实验步骤</h1><h3 id="虚拟机-1"><a href="#虚拟机-1" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>开启防火防并且利用防火墙打开地址伪装</p>
-<figure class="highlight plain"><figcaption><span>~]# firewall-cmd --add-masquerade```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">打开内核路由功能</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">[root@foundation1 ~]# sysctl -a | grep ip_forward</span><br><span class="line">net.ipv4.ip_forward = 1</span><br><span class="line">如果未开启：</span><br><span class="line">[root@foundation1 ~]# vim /etc/sysctl.conf </span><br><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# firewall-cmd --add-masquerade</span><br></pre></td></tr></table></figure>
+<p>打开内核路由功能</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# sysctl -a | grep ip_forward</span><br><span class="line">net.ipv4.ip_forward = 1</span><br><span class="line">如果未开启：</span><br><span class="line">[root@localhost ~]# vim /etc/sysctl.conf </span><br><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure>
 <p>设置网关</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim /etc/sysconfig/network</span><br><span class="line">GATEWAY=172.25.254.1</span><br></pre></td></tr></table></figure>
 <p>设置DNS</p>
@@ -509,7 +511,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">196</span>
+    <span title="Site words total count">198</span>
   
 </div>
 
