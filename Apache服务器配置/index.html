@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -82,15 +82,16 @@
 
 
 <meta name="description" content="0x00实验背景 Apache是世界使用排名第一的Web服务器软件。它可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是最流行的Web服务器端软件之一。它快速、可靠并且可通过简单的API扩充，将Perl/Python等解释器编译到服务器中。 0x01实验环境虚拟机系统版本：rhel7.0IP:172.25.28.1其他：关闭firewalld 0x02功能实现apache">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yiming&#39;s blog">
+<meta property="og:title" content="Apache服务器配置">
 <meta property="og:url" content="https://yiming0325.com/Apache服务器配置/index.html">
 <meta property="og:site_name" content="Yiming&#39;s blog">
 <meta property="og:description" content="0x00实验背景 Apache是世界使用排名第一的Web服务器软件。它可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是最流行的Web服务器端软件之一。它快速、可靠并且可通过简单的API扩充，将Perl/Python等解释器编译到服务器中。 0x01实验环境虚拟机系统版本：rhel7.0IP:172.25.28.1其他：关闭firewalld 0x02功能实现apache">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-20T15:54:10.373Z">
+<meta property="og:updated_time" content="2019-10-20T15:59:57.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yiming&#39;s blog">
+<meta name="twitter:title" content="Apache服务器配置">
 <meta name="twitter:description" content="0x00实验背景 Apache是世界使用排名第一的Web服务器软件。它可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是最流行的Web服务器端软件之一。它快速、可靠并且可通过简单的API扩充，将Perl/Python等解释器编译到服务器中。 0x01实验环境虚拟机系统版本：rhel7.0IP:172.25.28.1其他：关闭firewalld 0x02功能实现apache">
 
 
@@ -127,7 +128,7 @@
 
 
 
-  <title> | Yiming's blog</title>
+  <title>Apache服务器配置 | Yiming's blog</title>
   
 
 
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Apache服务器配置</h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-20T23:47:05+08:00">
-                2019-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T00:27:38+08:00">
+                2019-10-21
               </time>
             
 
@@ -309,12 +310,34 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-20T23:54:10+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-10-20T23:59:57+08:00">
                 2019-10-20
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -388,7 +411,6 @@
 <h5 id="3-cgi"><a href="#3-cgi" class="headerlink" title="3.cgi"></a>3.cgi</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /var/www/html/cgi</span><br><span class="line">semanager fcontent -a -t  httpd_sys_script_exec_t '/var/www/html/cgi(/.*)?'</span><br><span class="line">restorecon -RvvF /var/www/html/cgi/</span><br><span class="line">vim /var/www/html/cgi/index.cgi</span><br><span class="line"><span class="meta">#</span>!/usr/bin/perl</span><br><span class="line">print "Content-type: text/html\n\n";</span><br><span class="line">print `date`;</span><br><span class="line"></span><br><span class="line">chmod +x /var/www/html/cgi/index.cgi</span><br><span class="line">/var/www/html/cgi/index.cgi     #执行下脚本确保脚本运行正常</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vim adefatul.conf</span><br><span class="line">&lt;Directory "/var/www/html/cgi"&gt;</span><br><span class="line">        Options +ExecCGI</span><br><span class="line">        AddHandler cgi-script .cgi</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">systemctl restart httpd</span><br></pre></td></tr></table></figure>
 <h5 id="4-wsgi"><a href="#4-wsgi" class="headerlink" title="4.wsgi"></a>4.wsgi</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">yum install mod_wsgi -y</span><br><span class="line">vim /var/www/html/cgi/westos.wsgi</span><br><span class="line"><span class="meta">#</span>!/usr/bin/env python</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def application (environ, start_response):</span><br><span class="line">  response_body = 'UNIX EPOCH time is now: %s\n' % time.time()</span><br><span class="line">  status = '200 OK'</span><br><span class="line">  response_headers = [('Content-Type', 'text/plain'),</span><br><span class="line">                      ('Content-Length', '1'),</span><br><span class="line">                      ('Content-Length', str(len(response_body)))]</span><br><span class="line">  start_response(status, response_headers)</span><br><span class="line">  return [response_body]</span><br><span class="line"></span><br><span class="line">vim /etc/httpd/conf.d/adefault.conf</span><br><span class="line">&lt;VirtualHost _default_:80&gt;</span><br><span class="line">        DocumentRoot "/var/www/html"</span><br><span class="line">        WSGIScriptAlias /WSGI   /var/www/html/cgi/script.wsgi</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">systemctl restart httpd</span><br><span class="line"></span><br><span class="line">测试：</span><br><span class="line">http://172.25.28.1/WSGI</span><br></pre></td></tr></table></figure>
 <h4 id="设定https虚拟主机并设定网页重写"><a href="#设定https虚拟主机并设定网页重写" class="headerlink" title="设定https虚拟主机并设定网页重写"></a>设定https虚拟主机并设定网页重写</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line">        ServerName login.westos.com</span><br><span class="line">        DocumentRoot /var/www/html/virtual/login.westos.com/html</span><br><span class="line">        CustomLog "logs/login.logs" combined</span><br><span class="line">        SSLEngine on</span><br><span class="line">        SSLCertificateFile /etc/pki/tls/certs/www.westos.com.crt</span><br><span class="line">        SSLCertificateKeyFile /etc/pki/tls/private/www.westos.com.key</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line">&lt;Directory "/var/www/html/virtual/login.westos.com/html"&gt;</span><br><span class="line">        Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">        ServerName login.westos.com</span><br><span class="line">        RewriteEngine On</span><br><span class="line">        RewriteRule ^(/.*)$ https://%&#123;HTTP_HOST&#125;$1 [redirect=301]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">^(/.*)$         ##客户在浏览器地址栏中输入的所有字符</span><br><span class="line">https://        ##强制客户加密访问</span><br><span class="line"><span class="meta">%</span>&#123;HTTP_HOST&#125;    ##客户请求主机</span><br><span class="line"><span class="meta">$</span>1              ###"$1"标示 ^(/.*)$的值</span><br><span class="line">[redirect=301]  ##永久重写 302临时</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -402,6 +424,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
       
 
       
