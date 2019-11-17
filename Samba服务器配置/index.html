@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="0x00实验背景windows的匿名用户叫guestlinux的匿名用户叫anonymous Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft W">
+<meta name="description" content="0x00实验背景Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft Windows 系统的标准网络文件系统 CIFS: 通用网络文件系统:CIFS">
 <meta name="keywords" content="Linux,Samba">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Samba服务器配置">
 <meta property="og:url" content="https://yiming0325.com/Samba服务器配置/index.html">
 <meta property="og:site_name" content="Yiming&#39;s blog">
-<meta property="og:description" content="0x00实验背景windows的匿名用户叫guestlinux的匿名用户叫anonymous Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft W">
+<meta property="og:description" content="0x00实验背景Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft Windows 系统的标准网络文件系统 CIFS: 通用网络文件系统:CIFS">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-24T15:22:54.519Z">
+<meta property="og:updated_time" content="2019-11-17T13:31:17.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Samba服务器配置">
-<meta name="twitter:description" content="0x00实验背景windows的匿名用户叫guestlinux的匿名用户叫anonymous Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft W">
+<meta name="twitter:description" content="0x00实验背景Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft Windows 系统的标准网络文件系统 CIFS: 通用网络文件系统:CIFS">
 
 
 
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-24T23:22:54+08:00">
-                2019-10-24
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-17T21:31:17+08:00">
+                2019-11-17
               </time>
             
           </span>
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.5k
+                  1.4k
                 </span>
               
 
@@ -397,8 +397,7 @@
       
 
       
-        <h3 id="0x00实验背景"><a href="#0x00实验背景" class="headerlink" title="0x00实验背景"></a>0x00实验背景</h3><p>windows的匿名用户叫guest<br>linux的匿名用户叫anonymous</p>
-<p>Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft Windows 系统的标准网络文件系统</p>
+        <h3 id="0x00实验背景"><a href="#0x00实验背景" class="headerlink" title="0x00实验背景"></a>0x00实验背景</h3><p>Linux 中有两种主要协议可用访问网络文件系统 : NFS 和CIFS 。 NFS ( Network File System ) 可看作是 Linux 、UNIX 及其它类似操作系统的标准文件系统。 CIFS( Comon Internet File System ) 则是针对 Microsoft Windows 系统的标准网络文件系统</p>
 <p>CIFS: 通用网络文件系统:<br>CIFS 是针对 Microsoft Windows 操作系统的本地网络文件系统。<br>Linux 系统可以挂载和访问 CIFS 文件共享 , 如同常见的网络文件系统一样。然而 , 由于CIFS 是基于 NTFS 文件系统权限模型及其自身的身份验证系统来构建的 , 因而 CIFS 协&gt;议中的所有内容并不能很好地映射到 Linux 中 samba-client RPM 软件包所包含的 smbclient 实用程序可用来识别由 Windows 或 Samba 文件服务器提供的 CIFS 共享。该实用程序工作起来犹如在 Microsoft Windows 中单击网上邻居。然后 mount命令可用于挂载共享，访问 CIFS 共享的命令</p>
 <p>提供cifs协议实现共享文件</p>
 <h3 id="0x01实验环境"><a href="#0x01实验环境" class="headerlink" title="0x01实验环境"></a>0x01实验环境</h3><h4 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h4><p>系统版本：rhel7.3</p>
