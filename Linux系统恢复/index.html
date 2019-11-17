@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,NFS,">
+  <meta name="keywords" content="Linux,系统恢复,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="0x00实验背景NFS : 网络文件系统:NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能 0x01实验环境虚拟机系统版本：rhel7.3 IP：172.25.254.1 其他：关闭防火墙 0x02功能实现软">
-<meta name="keywords" content="Linux,NFS">
+<meta name="description" content="grub磁盘引导阶段dd if=/dev/vda of=/mnt/mbr bs=446 count=1hexdump -C /mnt/mbr dd if=/dev/zero of=/dev/vda bs=446 count=1 ###破坏mbr如果还没有重启电脑：grub2-install /dev/vda如果重起电脑：加一块光驱，以光驱启动，进入援救模式（troubleshooting---&amp;g">
+<meta name="keywords" content="Linux,系统恢复">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NFS服务器配置">
-<meta property="og:url" content="https://yiming0325.com/NFS服务器配置/index.html">
+<meta property="og:title" content="Linux系统恢复">
+<meta property="og:url" content="https://yiming0325.com/Linux系统恢复/index.html">
 <meta property="og:site_name" content="Yiming&#39;s blog">
-<meta property="og:description" content="0x00实验背景NFS : 网络文件系统:NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能 0x01实验环境虚拟机系统版本：rhel7.3 IP：172.25.254.1 其他：关闭防火墙 0x02功能实现软">
+<meta property="og:description" content="grub磁盘引导阶段dd if=/dev/vda of=/mnt/mbr bs=446 count=1hexdump -C /mnt/mbr dd if=/dev/zero of=/dev/vda bs=446 count=1 ###破坏mbr如果还没有重启电脑：grub2-install /dev/vda如果重起电脑：加一块光驱，以光驱启动，进入援救模式（troubleshooting---&amp;g">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-26T14:39:39.612Z">
+<meta property="og:updated_time" content="2019-11-17T13:50:08.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NFS服务器配置">
-<meta name="twitter:description" content="0x00实验背景NFS : 网络文件系统:NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能 0x01实验环境虚拟机系统版本：rhel7.3 IP：172.25.254.1 其他：关闭防火墙 0x02功能实现软">
+<meta name="twitter:title" content="Linux系统恢复">
+<meta name="twitter:description" content="grub磁盘引导阶段dd if=/dev/vda of=/mnt/mbr bs=446 count=1hexdump -C /mnt/mbr dd if=/dev/zero of=/dev/vda bs=446 count=1 ###破坏mbr如果还没有重启电脑：grub2-install /dev/vda如果重起电脑：加一块光驱，以光驱启动，进入援救模式（troubleshooting---&amp;g">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://yiming0325.com/NFS服务器配置/">
+  <link rel="canonical" href="https://yiming0325.com/Linux系统恢复/">
 
 
 
 
 
-  <title>NFS服务器配置 | Yiming's blog</title>
+  <title>Linux系统恢复 | Yiming's blog</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yiming0325.com/NFS服务器配置/">
+    <link itemprop="mainEntityOfPage" href="https://yiming0325.com/Linux系统恢复/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YimingYuan">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NFS服务器配置</h1>
+          <h1 class="post-title" itemprop="name headline">Linux系统恢复</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T22:09:14+08:00">
-                2019-10-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-17T21:40:16+08:00">
+                2019-11-17
               </time>
             
 
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-26T22:39:39+08:00">
-                2019-10-26
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-17T21:50:08+08:00">
+                2019-11-17
               </time>
             
           </span>
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  478
+                  814
                 </span>
               
 
@@ -376,7 +376,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  4
                 </span>
               
             </div>
@@ -397,19 +397,15 @@
       
 
       
-        <h3 id="0x00实验背景"><a href="#0x00实验背景" class="headerlink" title="0x00实验背景"></a>0x00实验背景</h3><p>NFS : 网络文件系统:<br>NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能</p>
-<h3 id="0x01实验环境"><a href="#0x01实验环境" class="headerlink" title="0x01实验环境"></a>0x01实验环境</h3><h4 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h4><p>系统版本：rhel7.3</p>
-<p>IP：172.25.254.1</p>
-<p>其他：关闭防火墙</p>
-<h3 id="0x02功能实现"><a href="#0x02功能实现" class="headerlink" title="0x02功能实现"></a>0x02功能实现</h3><h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum search nfs</span><br><span class="line">yum install nfs-utils.x86_64 -y  ###安装软件包</span><br><span class="line">systemctl start nfs</span><br><span class="line">如果没有关闭防火墙：</span><br><span class="line">firewall-cmd --permanent --add-service=nfs</span><br><span class="line">firewall-cmd --permanent --add-service=rpc-bind</span><br><span class="line">firewall-cmd --permanent --add-service=mountd</span><br><span class="line">测试：</span><br><span class="line">showmount -e 172.25.254.1</span><br></pre></td></tr></table></figure>
-<h4 id="建立共享目录并配置参数"><a href="#建立共享目录并配置参数" class="headerlink" title="建立共享目录并配置参数"></a>建立共享目录并配置参数</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">mkdir /westos</span><br><span class="line"></span><br><span class="line">vim /etc/exports</span><br><span class="line">/westos  *(ro)     ###对目录可读</span><br><span class="line">/westos  *(rw)    ###对目录可读写,需要chmod 777 /westos</span><br><span class="line">/westos   *(rw,sync,no_root_squash)   ###当NFC客户端使用root用户访问时，映射为NFS客户</span><br><span class="line">端的root用户,默认为65534的nfsnobody用户;sync：同步写入资料到内存与硬盘中 async：资料会暂存到内存中，而非直接写入硬盘 （大容量数据）</span><br><span class="line"></span><br><span class="line">exportfs -rv   ###使更改生效</span><br><span class="line">测试：</span><br><span class="line">showmount -e 172.25.254.1</span><br><span class="line">mount 172.25.254.1:/westos /mnt</span><br></pre></td></tr></table></figure>
-<h4 id="使用指定版本挂载"><a href="#使用指定版本挂载" class="headerlink" title="使用指定版本挂载"></a>使用指定版本挂载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mount -o vers=3 172.25.254.1:/westos  /mnt  ###使用指定的NFS版本进行挂载</span><br><span class="line">mount  ###查看挂载版本</span><br></pre></td></tr></table></figure>
-<h4 id="设置开机自动挂载"><a href="#设置开机自动挂载" class="headerlink" title="设置开机自动挂载"></a>设置开机自动挂载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">172.25.254.1：/westos  /mnt nfs  defaults  0 0</span><br></pre></td></tr></table></figure>
-<h4 id="设置智能挂载"><a href="#设置智能挂载" class="headerlink" title="设置智能挂载"></a>设置智能挂载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install autofs   ###安装autofs软件</span><br><span class="line">systemctl status autofs</span><br><span class="line">systemctl start autofs</span><br><span class="line">systemctl status autofs</span><br><span class="line">ll -d  /net</span><br><span class="line">cd /net</span><br><span class="line">cd 172.25.254.1</span><br><span class="line">cd westos/</span><br></pre></td></tr></table></figure>
-<h4 id="设置失效时间"><a href="#设置失效时间" class="headerlink" title="设置失效时间"></a>设置失效时间</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/sysconfig/autofs</span><br><span class="line">13 TIMEOUT=3</span><br></pre></td></tr></table></figure>
-<h4 id="更改智能挂载目录和策略"><a href="#更改智能挂载目录和策略" class="headerlink" title="更改智能挂载目录和策略"></a>更改智能挂载目录和策略</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/auto.master</span><br><span class="line">14 /mnt    /etc/auto.mnt</span><br><span class="line"></span><br><span class="line">vim /etc/auto.mnt</span><br><span class="line">westos  172.25.254.1:/westos</span><br><span class="line"></span><br><span class="line">systemctl restart autofs</span><br><span class="line">cd /mnt</span><br><span class="line">cd westos</span><br></pre></td></tr></table></figure>
-<h3 id="挂载多目录的方式："><a href="#挂载多目录的方式：" class="headerlink" title="挂载多目录的方式："></a>挂载多目录的方式：</h3><p>注：这时自动卸载时间会失效</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/auto.mnt</span><br><span class="line">*     172.25.254.1:/westos/&amp;      ###将172.25.254.1/westos目录下的westos1/,westos2/..分别挂载到本机/mnt/westos1 ......</span><br><span class="line">systemctl restart autofs</span><br><span class="line">cd /mnt</span><br><span class="line">ls</span><br><span class="line">cd westos1</span><br><span class="line">cd ..</span><br><span class="line">cd westos2</span><br></pre></td></tr></table></figure>
+        <h3 id="grub磁盘引导阶段"><a href="#grub磁盘引导阶段" class="headerlink" title="grub磁盘引导阶段"></a>grub磁盘引导阶段</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dd if=/dev/vda of=/mnt/mbr bs=446 count=1</span><br><span class="line">hexdump -C /mnt/mbr </span><br><span class="line">dd if=/dev/zero of=/dev/vda bs=446 count=1 ###破坏mbr</span><br><span class="line">如果还没有重启电脑：</span><br><span class="line">grub2-install /dev/vda</span><br><span class="line">如果重起电脑：</span><br><span class="line">加一块光驱，以光驱启动，进入援救模式（troubleshooting---&gt;Rescue a Red Hat Enterprise Linux system）</span><br><span class="line">chroot /mnt/sysimage/</span><br><span class="line">grub2-install /dev/vda</span><br><span class="line">exit</span><br><span class="line">然后从硬盘启动就成功启动</span><br></pre></td></tr></table></figure>
+<h3 id="grub文件引导阶段"><a href="#grub文件引导阶段" class="headerlink" title="grub文件引导阶段"></a>grub文件引导阶段</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -fr /boot/grub2/grub.cfg   ###破坏grub引导文件</span><br><span class="line">如果没有重启电脑：</span><br><span class="line">grub2-mkconfig &gt; /boot/grub2/grub.cfg  ###修复成功</span><br><span class="line">如果重启电脑：(不需要加光驱)</span><br><span class="line"><span class="meta">grub&gt;</span> set root='hd0,msdos1'</span><br><span class="line"><span class="meta">grub&gt;</span> linux16 /boot/vmlinuz-3.10.0-123.el7.x86_64 ro root=/dev/vda1</span><br><span class="line"><span class="meta">grub&gt;</span> initrd16 /boot/initramfs-3.10.0-123.el7.x86_64</span><br><span class="line"><span class="meta">grub&gt;</span> boot</span><br><span class="line">等系统启动后：</span><br><span class="line">grub2-mkconfig &gt; /boot/grub2/grub.cfg  ###成功修复</span><br><span class="line">如果是windows系统，引导如下：</span><br><span class="line">set root='hd0,msdos1'</span><br><span class="line">chainloader +1</span><br><span class="line">在引导文件中，可以修改菜单中的目录，例如：</span><br><span class="line">menuentry 'westos' &#123;</span><br><span class="line">        set root='hd0,msdos1'</span><br><span class="line">        chainloader +1</span><br><span class="line">&#125;</span><br><span class="line">可以用命令修改默认指向哪一个启动栏：</span><br><span class="line">grub2-set-default 2 ###0是第一行,所以2就是第二行</span><br></pre></td></tr></table></figure>
+<h3 id="内核引导阶段："><a href="#内核引导阶段：" class="headerlink" title="内核引导阶段："></a>内核引导阶段：</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -fr /boot/vmlinuz-3.10.0-123.el7.x86_64 </span><br><span class="line">重启时可以从网络（pxe）或者光驱启动：</span><br><span class="line">可以执行yum reinstall kernel进行修复，但是太慢</span><br><span class="line">从光驱启动：进入援救模式（troubleshooting---&gt;Rescue a Red Hat Enterprise Linux system），也可以从网络启动(pxe)</span><br><span class="line"><span class="meta">sh-42#</span> cd /run/install/repo/</span><br><span class="line"><span class="meta">sh-42#</span> cd Packages/</span><br><span class="line"><span class="meta">sh-42#</span> cp kernel-3.10.0.327.el7.x86_64.rpm  /mnt/sysimage/mnt/</span><br><span class="line"><span class="meta">sh-42#</span> chroot /mnt/sysimage</span><br><span class="line">bash-4.2# cd /mnt</span><br><span class="line">bash-4.2# rmp2cpio kernel-3.10.0.327.el7.x86_64.rpm | cpio -id</span><br><span class="line">bash-4.2# cd boot</span><br><span class="line">bash-4.2# cp vmlinuz-3.10.0-123.el7.x86_64 /boot</span><br><span class="line">bash-4.2# exit ###修复成功</span><br></pre></td></tr></table></figure>
+<h3 id="系统初始化阶段："><a href="#系统初始化阶段：" class="headerlink" title="系统初始化阶段："></a>系统初始化阶段：</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -fr initramfs-3.10.0-123.el7.x86_64.img </span><br><span class="line">uname -r  ###查看版本号</span><br><span class="line">如果没有关机：</span><br><span class="line">mkinitrd /boot/initramfs-3.10.0-123.el7.x86_64.img 3.10.0-123.el7.x86_64 ##成功修复</span><br><span class="line">如果重启以光驱启动：</span><br><span class="line">进入援救模式</span><br><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot</span><br><span class="line">mkinitrd /boot/initramfs-$(uname -r).img $(uname -r)</span><br><span class="line">exit </span><br><span class="line">从硬盘启动就成功</span><br><span class="line">系统初始化阶段会启动/etc/systemd/system/multi-user.target.wants/下的所有服务脚本</span><br><span class="line">[root@localhost multi-user.target.wants]# systemctl disable sshd</span><br><span class="line">rm '/etc/systemd/system/multi-user.target.wants/sshd.service'</span><br></pre></td></tr></table></figure>
+<h3 id="设置默认进入文字界面或者图形界面："><a href="#设置默认进入文字界面或者图形界面：" class="headerlink" title="设置默认进入文字界面或者图形界面："></a>设置默认进入文字界面或者图形界面：</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost Desktop]# cd /etc/systemd/system/</span><br><span class="line">[root@localhost system]# ls</span><br><span class="line">basic.target.wants                           getty.target.wants</span><br><span class="line">bluetooth.target.wants                       graphical.target.wants</span><br><span class="line">dbus-org.bluez.service                       multi-user.target.wants</span><br><span class="line">dbus-org.fedoraproject.FirewallD1.service    nfs.target.wants</span><br><span class="line">dbus-org.freedesktop.Avahi.service           printer.target.wants</span><br><span class="line">dbus-org.freedesktop.ModemManager1.service   sockets.target.wants</span><br><span class="line">dbus-org.freedesktop.NetworkManager.service  spice-vdagentd.target.wants</span><br><span class="line">dbus-org.freedesktop.nm-dispatcher.service   sysinit.target.wants</span><br><span class="line">default.target                               system-update.target.wants</span><br><span class="line">default.target.wants                         tmp.mount</span><br><span class="line">display-manager.service</span><br><span class="line">[root@localhost system]# ll default.target</span><br><span class="line">lrwxrwxrwx. 1 root root 40 Jul 10  2014 default.target -&gt; /usr/lib/systemd/system/graphical.target</span><br><span class="line">[root@localhost system]# systemctl set-default multi-user.target </span><br><span class="line">rm '/etc/systemd/system/default.target'</span><br><span class="line">ln -s '/usr/lib/systemd/system/multi-user.target' '/etc/systemd/system/default.target'</span><br><span class="line">[root@localhost system]# systemctl set-default graphical.target </span><br><span class="line">rm '/etc/systemd/system/default.target'</span><br><span class="line">ln -s '/usr/lib/systemd/system/graphical.target' '/etc/systemd/system/default.target'</span><br></pre></td></tr></table></figure>
+<h3 id="设置默认启动项："><a href="#设置默认启动项：" class="headerlink" title="设置默认启动项："></a>设置默认启动项：</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">grub2-set-default 1   ###启动第二项，0 1 2 ....</span><br></pre></td></tr></table></figure>
+<h3 id="如果失去-boot分区下的所有文件-重启会出现grub-rescue-gt-…"><a href="#如果失去-boot分区下的所有文件-重启会出现grub-rescue-gt-…" class="headerlink" title="如果失去/boot分区下的所有文件,重启会出现grub rescue&gt;….:"></a>如果失去/boot分区下的所有文件,重启会出现grub rescue&gt;….:</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /boot</span><br><span class="line">ls</span><br><span class="line">rm -fr *</span><br><span class="line">可以从光驱启动或者网络启动（pxe）:</span><br><span class="line">进入援救模式（troubleshooting---&gt;Rescue a Red Hat Enterprise Linux system）</span><br><span class="line">做上面操作后重启即可</span><br></pre></td></tr></table></figure>
+<h3 id="暴力破解密码："><a href="#暴力破解密码：" class="headerlink" title="暴力破解密码："></a>暴力破解密码：</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rw rd.break （Ctrl+x）</span><br><span class="line">chroot /sysroot/</span><br><span class="line">passwd</span><br><span class="line">touch /.autorelabel</span><br><span class="line">exit </span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -428,7 +424,7 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/NFS/" rel="tag"># NFS</a>
+            <a href="/tags/系统恢复/" rel="tag"># 系统恢复</a>
           
         </div>
       
@@ -441,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Apache服务器配置/" rel="next" title="Apache服务器配置">
-                <i class="fa fa-chevron-left"></i> Apache服务器配置
+              <a href="/pxe环境部署/" rel="next" title="pxe环境部署">
+                <i class="fa fa-chevron-left"></i> pxe环境部署
               </a>
             
           </div>
@@ -450,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Samba服务器配置/" rel="prev" title="Samba服务器配置">
-                Samba服务器配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

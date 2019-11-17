@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,NFS,">
+  <meta name="keywords" content="Linux,pxe,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="0x00实验背景NFS : 网络文件系统:NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能 0x01实验环境虚拟机系统版本：rhel7.3 IP：172.25.254.1 其他：关闭防火墙 0x02功能实现软">
-<meta name="keywords" content="Linux,NFS">
+<meta name="description" content="0x00实验背景预启动执行环境（Preboot eXecution Environment，PXE，也被称为预执行环境)提供了一种使用网络接口（Network Interface）启动计算机的机制。这种机制让计算机的启动可以不依赖本地数据存储设备（如硬盘）或本地已安装的操作系统。 0x01实验环境虚拟机系统版本：rhel7.0 其他：关闭防火墙 0x02环境部署installyum install">
+<meta name="keywords" content="Linux,pxe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NFS服务器配置">
-<meta property="og:url" content="https://yiming0325.com/NFS服务器配置/index.html">
+<meta property="og:title" content="pxe环境部署">
+<meta property="og:url" content="https://yiming0325.com/pxe环境部署/index.html">
 <meta property="og:site_name" content="Yiming&#39;s blog">
-<meta property="og:description" content="0x00实验背景NFS : 网络文件系统:NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能 0x01实验环境虚拟机系统版本：rhel7.3 IP：172.25.254.1 其他：关闭防火墙 0x02功能实现软">
+<meta property="og:description" content="0x00实验背景预启动执行环境（Preboot eXecution Environment，PXE，也被称为预执行环境)提供了一种使用网络接口（Network Interface）启动计算机的机制。这种机制让计算机的启动可以不依赖本地数据存储设备（如硬盘）或本地已安装的操作系统。 0x01实验环境虚拟机系统版本：rhel7.0 其他：关闭防火墙 0x02环境部署installyum install">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-26T14:39:39.612Z">
+<meta property="og:updated_time" content="2019-11-17T14:12:37.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NFS服务器配置">
-<meta name="twitter:description" content="0x00实验背景NFS : 网络文件系统:NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能 0x01实验环境虚拟机系统版本：rhel7.3 IP：172.25.254.1 其他：关闭防火墙 0x02功能实现软">
+<meta name="twitter:title" content="pxe环境部署">
+<meta name="twitter:description" content="0x00实验背景预启动执行环境（Preboot eXecution Environment，PXE，也被称为预执行环境)提供了一种使用网络接口（Network Interface）启动计算机的机制。这种机制让计算机的启动可以不依赖本地数据存储设备（如硬盘）或本地已安装的操作系统。 0x01实验环境虚拟机系统版本：rhel7.0 其他：关闭防火墙 0x02环境部署installyum install">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://yiming0325.com/NFS服务器配置/">
+  <link rel="canonical" href="https://yiming0325.com/pxe环境部署/">
 
 
 
 
 
-  <title>NFS服务器配置 | Yiming's blog</title>
+  <title>pxe环境部署 | Yiming's blog</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yiming0325.com/NFS服务器配置/">
+    <link itemprop="mainEntityOfPage" href="https://yiming0325.com/pxe环境部署/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YimingYuan">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NFS服务器配置</h1>
+          <h1 class="post-title" itemprop="name headline">pxe环境部署</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T22:09:14+08:00">
-                2019-10-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-12T21:57:28+08:00">
+                2019-11-12
               </time>
             
 
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-26T22:39:39+08:00">
-                2019-10-26
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-17T22:12:37+08:00">
+                2019-11-17
               </time>
             
           </span>
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  478
+                  605
                 </span>
               
 
@@ -397,19 +397,13 @@
       
 
       
-        <h3 id="0x00实验背景"><a href="#0x00实验背景" class="headerlink" title="0x00实验背景"></a>0x00实验背景</h3><p>NFS : 网络文件系统:<br>NFS ( Network File System ) 是由 Linux 、 UNIX 及其他类似操作系统使用的互联网标准协议 , 可作为它们的本地网络文件系统。它是一种活动扩展之下的开放标准 , 可支持本地 Linux 权限和文件系统功能</p>
-<h3 id="0x01实验环境"><a href="#0x01实验环境" class="headerlink" title="0x01实验环境"></a>0x01实验环境</h3><h4 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h4><p>系统版本：rhel7.3</p>
-<p>IP：172.25.254.1</p>
+        <h3 id="0x00实验背景"><a href="#0x00实验背景" class="headerlink" title="0x00实验背景"></a>0x00实验背景</h3><p>预启动执行环境（Preboot eXecution Environment，PXE，也被称为预执行环境)提供了一种使用网络接口（Network Interface）启动计算机的机制。这种机制让计算机的启动可以不依赖本地数据存储设备（如硬盘）或本地已安装的操作系统。</p>
+<h3 id="0x01实验环境"><a href="#0x01实验环境" class="headerlink" title="0x01实验环境"></a>0x01实验环境</h3><h4 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h4><p>系统版本：rhel7.0</p>
 <p>其他：关闭防火墙</p>
-<h3 id="0x02功能实现"><a href="#0x02功能实现" class="headerlink" title="0x02功能实现"></a>0x02功能实现</h3><h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum search nfs</span><br><span class="line">yum install nfs-utils.x86_64 -y  ###安装软件包</span><br><span class="line">systemctl start nfs</span><br><span class="line">如果没有关闭防火墙：</span><br><span class="line">firewall-cmd --permanent --add-service=nfs</span><br><span class="line">firewall-cmd --permanent --add-service=rpc-bind</span><br><span class="line">firewall-cmd --permanent --add-service=mountd</span><br><span class="line">测试：</span><br><span class="line">showmount -e 172.25.254.1</span><br></pre></td></tr></table></figure>
-<h4 id="建立共享目录并配置参数"><a href="#建立共享目录并配置参数" class="headerlink" title="建立共享目录并配置参数"></a>建立共享目录并配置参数</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">mkdir /westos</span><br><span class="line"></span><br><span class="line">vim /etc/exports</span><br><span class="line">/westos  *(ro)     ###对目录可读</span><br><span class="line">/westos  *(rw)    ###对目录可读写,需要chmod 777 /westos</span><br><span class="line">/westos   *(rw,sync,no_root_squash)   ###当NFC客户端使用root用户访问时，映射为NFS客户</span><br><span class="line">端的root用户,默认为65534的nfsnobody用户;sync：同步写入资料到内存与硬盘中 async：资料会暂存到内存中，而非直接写入硬盘 （大容量数据）</span><br><span class="line"></span><br><span class="line">exportfs -rv   ###使更改生效</span><br><span class="line">测试：</span><br><span class="line">showmount -e 172.25.254.1</span><br><span class="line">mount 172.25.254.1:/westos /mnt</span><br></pre></td></tr></table></figure>
-<h4 id="使用指定版本挂载"><a href="#使用指定版本挂载" class="headerlink" title="使用指定版本挂载"></a>使用指定版本挂载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mount -o vers=3 172.25.254.1:/westos  /mnt  ###使用指定的NFS版本进行挂载</span><br><span class="line">mount  ###查看挂载版本</span><br></pre></td></tr></table></figure>
-<h4 id="设置开机自动挂载"><a href="#设置开机自动挂载" class="headerlink" title="设置开机自动挂载"></a>设置开机自动挂载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">172.25.254.1：/westos  /mnt nfs  defaults  0 0</span><br></pre></td></tr></table></figure>
-<h4 id="设置智能挂载"><a href="#设置智能挂载" class="headerlink" title="设置智能挂载"></a>设置智能挂载</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install autofs   ###安装autofs软件</span><br><span class="line">systemctl status autofs</span><br><span class="line">systemctl start autofs</span><br><span class="line">systemctl status autofs</span><br><span class="line">ll -d  /net</span><br><span class="line">cd /net</span><br><span class="line">cd 172.25.254.1</span><br><span class="line">cd westos/</span><br></pre></td></tr></table></figure>
-<h4 id="设置失效时间"><a href="#设置失效时间" class="headerlink" title="设置失效时间"></a>设置失效时间</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/sysconfig/autofs</span><br><span class="line">13 TIMEOUT=3</span><br></pre></td></tr></table></figure>
-<h4 id="更改智能挂载目录和策略"><a href="#更改智能挂载目录和策略" class="headerlink" title="更改智能挂载目录和策略"></a>更改智能挂载目录和策略</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/auto.master</span><br><span class="line">14 /mnt    /etc/auto.mnt</span><br><span class="line"></span><br><span class="line">vim /etc/auto.mnt</span><br><span class="line">westos  172.25.254.1:/westos</span><br><span class="line"></span><br><span class="line">systemctl restart autofs</span><br><span class="line">cd /mnt</span><br><span class="line">cd westos</span><br></pre></td></tr></table></figure>
-<h3 id="挂载多目录的方式："><a href="#挂载多目录的方式：" class="headerlink" title="挂载多目录的方式："></a>挂载多目录的方式：</h3><p>注：这时自动卸载时间会失效</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/auto.mnt</span><br><span class="line">*     172.25.254.1:/westos/&amp;      ###将172.25.254.1/westos目录下的westos1/,westos2/..分别挂载到本机/mnt/westos1 ......</span><br><span class="line">systemctl restart autofs</span><br><span class="line">cd /mnt</span><br><span class="line">ls</span><br><span class="line">cd westos1</span><br><span class="line">cd ..</span><br><span class="line">cd westos2</span><br></pre></td></tr></table></figure>
+<h3 id="0x02环境部署"><a href="#0x02环境部署" class="headerlink" title="0x02环境部署"></a>0x02环境部署</h3><h4 id="install"><a href="#install" class="headerlink" title="install"></a>install</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install httpd dhcp tftp-server syslinux -y</span><br><span class="line"></span><br><span class="line">httpd		##共享安装资源</span><br><span class="line">dhcp		##分配ip以及让客户主机获取pxelinux.0文件</span><br><span class="line">pxelinux.0	##预安装环境头文件，用来指定读取后续文件的程序</span><br><span class="line">tftp-server	##提供tftp协议，令客户主机可以读取到预安装环境</span><br><span class="line">syslinux	##提供pxelinux.0文件</span><br></pre></td></tr></table></figure>
+<h4 id="启用服务"><a href="#启用服务" class="headerlink" title="启用服务"></a>启用服务</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld </span><br><span class="line">systemctl disable firewalld </span><br><span class="line">systemctl start httpd </span><br><span class="line">systemctl enable httpd </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>#启用tftp服务</span><br><span class="line">vim /etc/xinetd.d/tftp</span><br><span class="line">14         disable                 = no</span><br><span class="line"></span><br><span class="line">systemctl restart xinetd</span><br><span class="line">chkconfig --list</span><br><span class="line">xinetd based services:</span><br><span class="line">	chargen-dgram: 	off</span><br><span class="line">	chargen-stream:	off</span><br><span class="line">	daytime-dgram: 	off</span><br><span class="line">	daytime-stream:	off</span><br><span class="line">	discard-dgram: 	off</span><br><span class="line">	discard-stream:	off</span><br><span class="line">	echo-dgram:    	off</span><br><span class="line">	echo-stream:   	off</span><br><span class="line">	tcpmux-server: 	off</span><br><span class="line">	tftp:          	on		##tftp服务开启</span><br><span class="line">	time-dgram:    	off</span><br><span class="line">	time-stream:   	off</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>#启用dhcp服务</span><br><span class="line"></span><br><span class="line">cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br><span class="line">vim /etc/dhcp/dhcpd.conf</span><br><span class="line">option domain-name "example.com";	##客户主机域名</span><br><span class="line">option domain-name-servers 172.25.254.254; ##客户主机获得到的dns</span><br><span class="line">default-lease-time 600;			##默认租约期</span><br><span class="line">max-lease-time 7200;			##最长租约期</span><br><span class="line">log-facility local7;			##日志级别</span><br><span class="line">subnet 172.25.254.0 netmask 255.255.255.0 &#123;	##网段，子网掩码</span><br><span class="line">  range 172.25.254.60 172.25.254.70;	##ip地址池</span><br><span class="line">  option routers 172.25.254.250;	##客户主机获得到的网关</span><br><span class="line">  filename "pxelinux.0";		##客户主机获得到的预安装环境头文件</span><br><span class="line">  next-server 172.25.254.100;		##指定头文件所在主机的ip</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">systemctl start dhcpd</span><br><span class="line">systemctl enable dhcpd</span><br></pre></td></tr></table></figure>
+<h4 id="设定共享文件"><a href="#设定共享文件" class="headerlink" title="设定共享文件"></a>设定共享文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span>#制作安装源</span><br><span class="line">mkdir  /var/www/html/rhel7.0</span><br><span class="line">mkdir  /iso</span><br><span class="line">mv /root/rhel-server-7.0-x86_64-dvd.iso  /iso/</span><br><span class="line">mount /iso/rhel-server-7.0-x86_64-dvd.iso /var/www/html/rhel7.0/</span><br><span class="line">vim /etc/rc.d/rc.local</span><br><span class="line">mount /iso/rhel-server-7.0-x86_64-dvd.iso /var/www/html/rhel7.0/</span><br><span class="line">chmod +x /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>#制作预安装环境</span><br><span class="line">cp /var/www/html/rhel7.0/isolinux/*  /var/lib/tftpboot/</span><br><span class="line">cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/</span><br><span class="line">mkdir /var/lib/tftpboot/pxelinux.cfg</span><br><span class="line">cp /var/lib/tftpboot/isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default</span><br><span class="line">systemctl restart xinetd</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>#设定自动化部署</span><br><span class="line">yum install system-conifig-kickstart</span><br><span class="line">system-config-kickstart		----&gt;/var/www/html/rhel7.0.cfg</span><br><span class="line"></span><br><span class="line">vim /var/lib/tftpboot/pxelinux.cfg/default</span><br><span class="line"></span><br><span class="line">label autoinstall	##选项标签</span><br><span class="line">  menu label ^Autoinstall RHEL7.0	##标题</span><br><span class="line">  kernel vmlinuz			##启动的内核文件</span><br><span class="line">  append initrd=initrd.img repo=http://172.25.254.100/rhel7.0 ks=http://172.25.254.100/rhel7.0.cfg</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -428,7 +422,7 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/NFS/" rel="tag"># NFS</a>
+            <a href="/tags/pxe/" rel="tag"># pxe</a>
           
         </div>
       
@@ -441,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Apache服务器配置/" rel="next" title="Apache服务器配置">
-                <i class="fa fa-chevron-left"></i> Apache服务器配置
+              <a href="/FTP服务器配置/" rel="next" title="FTP服务器配置">
+                <i class="fa fa-chevron-left"></i> FTP服务器配置
               </a>
             
           </div>
@@ -451,8 +445,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Samba服务器配置/" rel="prev" title="Samba服务器配置">
-                Samba服务器配置 <i class="fa fa-chevron-right"></i>
+              <a href="/Linux系统恢复/" rel="prev" title="Linux系统恢复">
+                Linux系统恢复 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
